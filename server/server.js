@@ -18,9 +18,10 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-app-name.vercel.app"  // add after Vercel deploys
+    "https://todo-list-yourname.vercel.app"  // your actual vercel URL
   ]
 }));
+
 
 app.get("/", (req, res) => {
   res.status(200).json({
