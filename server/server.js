@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://todo-list-yourname.vercel.app"  // your actual vercel URL
+    "https://todo-list-theta-steel-93.vercel.app/"  // your actual vercel URL
   ]
 }));
 
