@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+* {
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "GRAD" 0;
+}

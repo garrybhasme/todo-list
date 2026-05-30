@@ -102,3 +102,52 @@ PUT: Edit a particular task
 8. Mount routes → app.use('/api/todos', todoRoutes)
 9. Listen on PORT from .env
 Now db is connected and all tasks are performing well as planned. Commiting all this code which is working till now....
+
+# Now Working on client side
+## Setting client side code 
+### installing vite and node modules
+"npm create vite@latest client -- --template react
+cd client
+npm install"
+
+### Install everything you need in one go
+"npm install axios react-router-dom tailwindcss @tailwindcss/vite"
+axios → to make API calls to your Express backend
+react-router-dom → for page navigation
+tailwindcss → for styling
+
+### Add following mentioned files:
+#### vite.config.js
+import tailwindcss from '@tailwindcss/vite'
+tailwindcss() in plugins:[]
+
+#### src/index.css
+@import "tailwindcss";
+
+### Clean up the boilerplate Vite gives you
+Delete these files, you won't need them:
+src/App.css
+src/assets/react.svg
+public/vite.svg
+
+### Set up the API base URL
+Created a file src/services/api.js — this is where all axios calls to the backend will live.
+
+### Also created a .env file inside client/
+VITE_API_BASE_URL=http://localhost:4000/api
+
+## Now craeting the file structure for client-code
+src/
+├── components/
+│   ├── TodoInput.jsx      → input box to add new task
+│   ├── TodoItem.jsx       → single task row (edit, delete, toggle)
+│   └── TodoList.jsx       → renders list of TodoItems
+├── pages/
+│   └── HomePage.jsx       → main page
+├── services/
+│   └── api.js             → all axios API call functions
+├── App.jsx                → routing lives here
+└── index.css              → tailwind import
+
+## Run the Vite by cmd:
+"npm run dev"
